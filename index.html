@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braden Flournoy — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; color:#1f2937; }
+    header { padding: 48px 20px; text-align:center; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; padding: 0 20px 40px; max-width: 1000px; margin: 0 auto;}
+    .card { border:1px solid #e5e7eb; border-radius:16px; padding:16px; }
+    h1 { margin: 0 0 10px; font-size: 28px; }
+    h2 { font-size: 18px; margin: 0 0 6px; }
+    .links a { margin-right:10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Braden Flournoy</h1>
+    <p>Georgia Tech CS — Threads: Intelligence & Information Internetworks</p>
+    <p class="links">
+      <a class="btn" href="https://github.com/bradenrflournoy">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/bradenrflournoy">LinkedIn</a>
+      <a class="btn" href="/resume.pdf">Resume</a>
+    </p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Yardly</h2>
+      <p>Neighborhood services MVP. React + Flask + Postgres.</p>
+      <div class="links">
+        <a class="btn" href="https://yardlyapp.com/">Live</a>
+        <a class="btn" href="https://github.com/yourrepo">Code</a>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Current Crisis (VIP)</h2>
+      <p>Faculty-led game team; C# systems + gameplay features.</p>
+      <div class="links">
+        <a class="btn" href="https://currentcrisis.net/">Site</a>
+        <a class="btn" href="https://github.com/yourrepo">Code</a>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Delivery DB System</h2>
+      <p>EERD → SQL schema, procedures & performance tuning.</p>
+      <div class="links">
+        <a class="btn" href="https://github.com/yourrepo">Code</a>
+        <a class="btn" href="/projects/db-notes.html">Write-up</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
