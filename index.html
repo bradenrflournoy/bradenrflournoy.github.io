@@ -1,46 +1,99 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Braden Flournoy - Portfolio</title>
+  <title>Braden Flournoy — Portfolio</title>
+  <meta name="description" content="Braden Flournoy · Georgia Tech CS — Projects and links." />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; color:#1f2937; }
-    header { padding: 48px 20px; text-align:center; }
-    .btn { display:inline-block; padding:10px 14px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; padding: 0 20px 40px; max-width: 1000px; margin: 0 auto;}
-    .card { border:1px solid #e5e7eb; border-radius:16px; padding:16px; }
-    h1 { margin: 0 0 10px; font-size: 28px; }
-    h2 { font-size: 18px; margin: 0 0 6px; }
-    .links a { margin-right:10px; }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230ea5e9'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='28' fill='white' font-family='system-ui,sans-serif'%3EB%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-  <header>
-    <h1>Braden Flournoy</h1>
-    <p>Georgia Tech CS - Threads: Intelligence & Information Internetworks</p>
-    <p class="links">
-      <a class="btn" href="https://github.com/bradenrflournoy">GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/bradenrflournoy">LinkedIn</a>
-    </p>
-  </header>
-  <main class="grid">
-    <section class="card">
-      <h2>Yardly</h2>
-      <p>Neighborhood services MVP</p>
-      <div class="links">
-        <a class="btn" href="https://yardlyapp.com/">Site</a>
+  <div class="bg"></div>
+  <header class="site-header container">
+    <nav class="nav">
+      <a class="brand" href="/">BF</a>
+      <div class="nav-links">
+        <a href="https://github.com/bradenrflournoy" class="link">GitHub</a>
+        <a href="https://linkedin.com/in/bradenrflournoy" class="link">LinkedIn</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1 class="title">
+        Braden Flournoy
+        <span class="grad">Software Engineer</span>
+      </h1>
+      <p class="subtitle">Georgia Tech CS — Threads: Intelligence &amp; Information Internetworks</p>
+      <div class="cta">
+        <a class="btn primary" href="./resume.pdf">Resume</a>
+        <a class="btn ghost" href="#projects">Projects</a>
       </div>
     </section>
-    <section class="card">
-      <h2>Current Crisis (VIP)</h2>
-      <p>Faculty-led game team</p>
-      <div class="links">
-        <a class="btn" href="https://currentcrisis.net/">Site</a>
-      </div>
+  </header>
+
+  <main class="container" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <section class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-top">
+          <h3 class="card-title">Yardly</h3>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Postgres</span>
+          </div>
+        </div>
+        <p class="card-desc">Neighborhood services MVP with auth, bookings, and deployment pipeline.</p>
+        <div class="card-actions">
+          <a class="btn small primary" href="https://yardlyapp.com/" target="_blank" rel="noopener">Live</a>
+          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/yardly" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-top">
+          <h3 class="card-title">Current Crisis (VIP)</h3>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">Unity</span>
+          </div>
+        </div>
+        <p class="card-desc">Faculty-led game team; implemented gameplay systems and tooling.</p>
+        <div class="card-actions">
+          <a class="btn small primary" href="https://currentcrisis.net/" target="_blank" rel="noopener">Site</a>
+          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/current-crisis" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+
+      <!-- Add more cards as you ship -->
+      <article class="card">
+        <div class="card-top">
+          <h3 class="card-title">Delivery DB System</h3>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+        <p class="card-desc">EERD → normalized schema, stored procedures & indexing; reproducible queries.</p>
+        <div class="card-actions">
+          <a class="btn small primary" href="projects/db-notes.html">Write-up</a>
+          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/delivery-db-system" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
     </section>
   </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="y"></span> Braden Flournoy · <a class="link" href="mailto:bradenrflournoy@gmail.com">bradenrflournoy@gmail.com</a></p>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
