@@ -5,8 +5,8 @@
   --muted: #9aa3b2;
   --card: rgba(255,255,255,0.06);
   --stroke: rgba(255,255,255,0.12);
-  --brand: #22d3ee;   /* cyan-400 */
-  --brand-2: #818cf8; /* indigo-400 */
+  --brand: #22d3ee;
+  --brand-2: #818cf8;
   --radius: 16px;
   --shadow: 0 10px 25px rgba(0,0,0,0.35);
   --blur: saturate(1.1) blur(8px);
@@ -103,13 +103,10 @@ body{
 /* ====== Grid & Cards ====== */
 .grid{
   display: grid;
-  /* wider min track => at most 3 columns inside your 1080px container */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 16px;
-
-  /* center the whole grid block */
-  max-width: 1000px;      /* ~3 * 320 + gaps */
-  margin: 0 auto 50px;    /* centers within the page */
+  max-width: 1000px;
+  margin: 0 auto 50px;
   justify-content: center;
 }
 .card{
@@ -119,7 +116,7 @@ body{
   padding: 16px;
   box-shadow: var(--shadow);
   backdrop-filter: var(--blur);
-  transform: translateZ(0); /* hint for smoother hover */
+  transform: translateZ(0);
   transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .card:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.22); }
@@ -127,7 +124,6 @@ body{
 .card-title{ margin:0; font-size: 18px; }
 .card-desc{ margin: 10px 0 14px; color: var(--muted); }
 .card-actions{ display:flex; gap:10px; flex-wrap:wrap; }
-
 .tags{ display:flex; gap:6px; flex-wrap:wrap; }
 .tag{
   font-size:12px; padding:4px 8px; border-radius:999px;
