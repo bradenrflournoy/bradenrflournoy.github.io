@@ -102,9 +102,15 @@ body{
 
 /* ====== Grid & Cards ====== */
 .grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px; padding-bottom: 50px;
+  display: grid;
+  /* wider min track => at most 3 columns inside your 1080px container */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+
+  /* center the whole grid block */
+  max-width: 1000px;      /* ~3 * 320 + gaps */
+  margin: 0 auto 50px;    /* centers within the page */
+  justify-content: center;
 }
 .card{
   border:1px solid var(--stroke);
