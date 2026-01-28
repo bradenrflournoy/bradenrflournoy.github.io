@@ -25,10 +25,7 @@
         <span class="grad">Software Engineer</span>
       </h1>
       <p class="subtitle">Georgia Tech CS — Threads: Intelligence &amp; Information Internetworks</p>
-      <div class="cta">
-        <a class="btn primary" href="./resume.pdf">Resume</a>
-        <a class="btn ghost" href="#projects">Projects</a>
-      </div>
+      <!-- CTA removed per request -->
     </section>
   </header>
 
@@ -36,24 +33,22 @@
     <h2 class="section-title">Featured Projects</h2>
 
     <section class="grid">
-      <!-- Card 1 -->
+      <!-- 1) Yardly -->
       <article class="card">
         <div class="card-top">
           <h3 class="card-title">Yardly</h3>
           <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Postgres</span>
+            <span class="tag">Product</span>
+            <span class="tag">Full-stack</span>
           </div>
         </div>
         <p class="card-desc">Neighborhood services MVP with auth, bookings, and deployment pipeline.</p>
         <div class="card-actions">
-          <a class="btn small primary" href="https://yardlyapp.com/" target="_blank" rel="noopener">Live</a>
-          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/yardly" target="_blank" rel="noopener">Code</a>
+          <a class="btn small primary" href="https://yardlyapp.com/" target="_blank" rel="noopener">Site</a>
         </div>
       </article>
 
-      <!-- Card 2 -->
+      <!-- 2) Current Crisis (VIP) -->
       <article class="card">
         <div class="card-top">
           <h3 class="card-title">Current Crisis (VIP)</h3>
@@ -65,23 +60,55 @@
         <p class="card-desc">Faculty-led game team; implemented gameplay systems and tooling.</p>
         <div class="card-actions">
           <a class="btn small primary" href="https://currentcrisis.net/" target="_blank" rel="noopener">Site</a>
-          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/current-crisis" target="_blank" rel="noopener">Code</a>
         </div>
       </article>
 
-      <!-- Add more cards as you ship -->
+      <!-- 3) ML Project (Earthquake Alerts) -->
       <article class="card">
         <div class="card-top">
-          <h3 class="card-title">Delivery DB System</h3>
+          <h3 class="card-title">Earthquake Alert Prediction</h3>
           <div class="tags">
+            <span class="tag">ML</span>
+            <span class="tag">XGBoost</span>
             <span class="tag">SQL</span>
-            <span class="tag">PostgreSQL</span>
           </div>
         </div>
-        <p class="card-desc">EERD → normalized schema, stored procedures & indexing; reproducible queries.</p>
+        <p class="card-desc">Preprocessing + XGBoost pipeline; HTML report export with metrics & plots.</p>
         <div class="card-actions">
-          <a class="btn small primary" href="projects/db-notes.html">Write-up</a>
-          <a class="btn small ghost" href="https://github.com/YOUR_USERNAME/delivery-db-system" target="_blank" rel="noopener">Code</a>
+          <!-- Update this path if your report is at /exports/analysis.html -->
+          <a class="btn small primary" href="analysis.html" target="_blank" rel="noopener">Report</a>
+        </div>
+      </article>
+
+      <!-- 4) Rubik’s Cube Solver -->
+      <article class="card">
+        <div class="card-top">
+          <h3 class="card-title">Rubik’s Cube Solver</h3>
+          <div class="tags">
+            <span class="tag">JS</span>
+            <span class="tag">Kociemba</span>
+          </div>
+        </div>
+        <p class="card-desc">Interactive 3×3 solver with cube net input and readable move sequence.</p>
+        <div class="card-actions">
+          <!-- If hosted as a separate Pages project, switch to https://YOUR_USERNAME.github.io/rubiks-cube-solver/ -->
+          <a class="btn small primary" href="rubiks-cube-solver/" target="_blank" rel="noopener">Demo</a>
+        </div>
+      </article>
+
+      <!-- 5) Particle Collision Simulator -->
+      <article class="card">
+        <div class="card-top">
+          <h3 class="card-title">Particle Collision Simulator</h3>
+          <div class="tags">
+            <span class="tag">Physics</span>
+            <span class="tag">JS</span>
+          </div>
+        </div>
+        <p class="card-desc">2D rigid-body collisions with gravity/drag controls and energy tracking.</p>
+        <div class="card-actions">
+          <!-- If hosted as separate Pages project, switch to https://YOUR_USERNAME.github.io/collision-simulator/ -->
+          <a class="btn small primary" href="collision-simulator/" target="_blank" rel="noopener">Demo</a>
         </div>
       </article>
     </section>
@@ -92,7 +119,6 @@
   </footer>
 
   <script>
-    // year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
