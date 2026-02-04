@@ -102,14 +102,15 @@ body{
 
 /* ====== Grid & Cards ====== */
 .grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
-  margin: 0 auto 50px;
   max-width: 1080px;
+  margin: 0 auto 50px;
 }
 .card{
+  width: 320px;
   border:1px solid var(--stroke);
   background: var(--card);
   border-radius: var(--radius);
