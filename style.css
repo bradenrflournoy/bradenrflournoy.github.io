@@ -61,6 +61,8 @@ body{
 .container{ max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 .site-header{ padding: 36px 0 20px; }
 .site-footer{ padding: 40px 0 70px; color: var(--muted); }
+.site-footer .link{ color: inherit; text-decoration: none; }
+.site-footer .link:hover{ text-decoration: underline; }
 
 /* ====== Nav ====== */
 .nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
