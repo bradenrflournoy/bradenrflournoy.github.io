@@ -205,11 +205,12 @@ body{
   border:1px solid var(--stroke);
   border-radius: var(--radius);
   overflow:hidden;
-  aspect-ratio: 16 / 9;
   background: rgba(255,255,255,0.03);
   box-shadow: var(--shadow);
 }
-.hero-shot img{ display:block; width:100%; height:100%; object-fit: cover; }
+.hero-shot img{ display:block; width:100%; height:auto; }
+/* placeholder frames still want a fixed ratio */
+.hero-shot:has(.shot-ph){ aspect-ratio: 16 / 9; }
 .hero-shot .shot-ph{ width:100%; height:100%; }
 .prose{ color: var(--fg); }
 .prose .lede{ color: var(--muted); font-size: 17px; }
