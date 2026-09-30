@@ -30,22 +30,31 @@ body{
   background: var(--bg);
 }
 
-/* ====== Background gradient / orbs ====== */
+/* ====== Background: deep base + fine grid + single restrained glow ====== */
 .bg{
   position: fixed; inset:0; z-index:-1;
-  background:
-    radial-gradient(1200px 600px at 15% 10%, rgba(34,211,238,.25), transparent 60%),
-    radial-gradient(1000px 500px at 85% 20%, rgba(129,140,248,.22), transparent 60%),
-    radial-gradient(900px 500px at 50% 90%, rgba(34,211,238,.18), transparent 60%),
-    linear-gradient(180deg, rgba(2,6,23,1) 0%, rgba(2,8,23,.8) 100%);
-  filter: saturate(1.1);
+  background-color: #0a0e1a;
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(34,211,238,.10), transparent 55%),
+    linear-gradient(rgba(255,255,255,.020) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.020) 1px, transparent 1px);
+  background-size: 100% 100%, 44px 44px, 44px 44px;
+  background-position: center top, center, center;
 }
-@media (prefers-reduced-motion: no-preference){
-  .bg{ animation: float 18s ease-in-out infinite alternate; }
-  @keyframes float{
-    0%{ filter: saturate(1.0) hue-rotate(0deg); }
-    100%{ filter: saturate(1.2) hue-rotate(10deg); }
+.bg::after{
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(90% 60% at 50% 120%, rgba(129,140,248,.08), transparent 60%);
+  pointer-events:none;
+}
+@media (prefers-color-scheme: light){
+  .bg{
+    background-color: #f4f6fb;
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, rgba(34,211,238,.10), transparent 55%),
+      linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px);
   }
+  .bg::after{ background: radial-gradient(90% 60% at 50% 120%, rgba(129,140,248,.06), transparent 60%); }
 }
 
 /* ====== Layout ====== */
@@ -70,10 +79,12 @@ body{
 .title{ font-size: clamp(28px, 4vw, 44px); margin: 0 0 8px; line-height: 1.15; }
 .grad{
   display:block;
-  font-size: clamp(18px, 2.4vw, 22px);
-  background: linear-gradient(90deg, var(--brand), var(--brand-2));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  margin-top: 6px;
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-top: 10px;
 }
 .subtitle{ color: var(--muted); margin: 8px 0 16px; }
 .cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
