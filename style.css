@@ -179,3 +179,32 @@ body{
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; animation: none !important; }
 }
+
+/* ====== Project detail pages ====== */
+.detail{ max-width: 820px; }
+.back-link{
+  display:inline-block; margin: 6px 0 18px;
+  color: var(--muted); text-decoration:none; font-size:14px;
+}
+.back-link:hover{ color: var(--fg); text-decoration:underline; }
+.detail-head{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom: 18px; }
+.detail-title{ font-size: clamp(24px, 3.4vw, 34px); margin:0; }
+.hero-shot{
+  margin: 0 0 24px;
+  border:1px solid var(--stroke);
+  border-radius: var(--radius);
+  overflow:hidden;
+  aspect-ratio: 16 / 9;
+  background: rgba(255,255,255,0.03);
+  box-shadow: var(--shadow);
+}
+.hero-shot img{ display:block; width:100%; height:100%; object-fit: cover; }
+.hero-shot .shot-ph{ width:100%; height:100%; }
+.prose{ color: var(--fg); }
+.prose .lede{ color: var(--muted); font-size: 17px; }
+.prose p{ margin: 0 0 14px; }
+.detail-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 24px; }
+.hero-shot--doc{ aspect-ratio: auto; height: 520px; }
+.hero-shot--doc object{ display:block; width:100%; height:100%; border:0; }
+.hero-shot--doc .shot-ph{ width:100%; height:100%; }
+.shot-caption{ margin: -14px 0 24px; font-size: 14px; }

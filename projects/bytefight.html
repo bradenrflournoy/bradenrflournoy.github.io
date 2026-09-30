@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ByteFight 2026 PvP Bot — Braden Flournoy</title>
+  <meta name="description" content="ByteFight 2026 PvP Bot — competitive King-of-the-Hill agent with collision-aware, stamina-aware strategy." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230ea5e9'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='28' fill='white' font-family='system-ui,sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="site-header container">
+    <nav class="nav">
+      <a class="brand" href="../index.html">BF</a>
+      <div class="nav-links">
+        <a href="https://github.com/bradenrflournoy" class="link">GitHub</a>
+        <a href="https://linkedin.com/in/bradenrflournoy" class="link">LinkedIn</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container detail">
+    <a class="back-link" href="../index.html">&larr; Back to projects</a>
+
+    <header class="detail-head">
+      <h1 class="detail-title">ByteFight 2026 PvP Bot</h1>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Algorithms</span>
+      </div>
+    </header>
+
+    <figure class="hero-shot">
+      <div class="shot-ph" role="img" aria-label="Visual placeholder for ByteFight">
+        <span class="shot-ph-label">Visual coming soon</span>
+        <span class="shot-ph-hint">assets/bytefight.png</span>
+      </div>
+      <!-- To use the real visual, replace the .shot-ph div above with:
+           <img src="../assets/bytefight.png" alt="ByteFight match"> -->
+    </figure>
+
+    <section class="prose">
+      <p class="lede">A competitive King-of-the-Hill agent for Georgia Tech&rsquo;s ByteFight 2026 tournament that plays a deliberate &ldquo;safe aggression&rdquo; style — avoid losing collisions, take and deny hills, and strike only when it can win.</p>
+
+      <p>ByteFight 2026 is a turn-based territory-control game. Each turn you must move, you may paint or erase tiles, and everything is constrained by a stamina budget where extra moves cost progressively more. Collisions are decided by cell control (and otherwise by whoever initiates), and matches are won on hills controlled, then cells controlled. My bot is designed from the ground up around those exact rules.</p>
+
+      <p><strong>Collision-aware safety.</strong> Before choosing any action, the bot forecasts the set of tiles the opponent can likely reach next turn, then filters its own options to avoid any move that would let the opponent collision-kill it. Moves onto our own controlled cells are treated as safe (we win collisions there); neutral or enemy cells are only safe if the opponent can&rsquo;t reach them. A &ldquo;comeback mode&rdquo; loosens this to contest neutral hills when we&rsquo;re behind.</p>
+
+      <p><strong>Hill-first objectives.</strong> Each turn the bot identifies every hill on the map and locks onto a focus hill to avoid dithering between targets — committing to a partially-started hill and deliberately not re-focusing one it just captured.</p>
+
+      <p><strong>Opportunistic attacks.</strong> Within the safe move set, it looks for direct collision attacks and kill moves, but only into tiles it can win — never into opponent-controlled cells where it would lose the exchange.</p>
+
+      <p><strong>Anti-snowball dominance guard.</strong> If the opponent starts controlling a large share of hills, the bot switches to aggressively pathing toward enemy-held hill cells to disrupt their lead before it becomes unrecoverable.</p>
+
+      <p><strong>Map-aware behavior and painting.</strong> It fingerprints maps by board size and hill signature to trigger map-specific behavior (including anti-camping rotation on maze maps), and runs a stamina-aware painting policy that prioritizes finishing focus-hill boundaries and denying enemy hill control over neutral expansion.</p>
+
+      <p>Pathing throughout uses a stamina-aware BFS. The bot ranked near the top of the ladder for much of the first half of the tournament. It didn&rsquo;t win it outright, but it represents heavy iteration on strategy, safety logic, and map-specific tuning — and it&rsquo;s some of my favorite algorithmic work.</p>
+    </section>
+
+    <div class="detail-actions">
+      <a class="btn primary" href="https://github.com/bradenrflournoy/bytefight-2026-bot" target="_blank" rel="noopener">Code</a>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="y"></span> Braden Flournoy &middot; <a class="link" href="mailto:bradenrflournoy@gmail.com">bradenrflournoy@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

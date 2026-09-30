@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yardly — Braden Flournoy</title>
+  <meta name="description" content="Yardly — full-stack iOS app for booking local small-group lawn services." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230ea5e9'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='28' fill='white' font-family='system-ui,sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="site-header container">
+    <nav class="nav">
+      <a class="brand" href="../index.html">BF</a>
+      <div class="nav-links">
+        <a href="https://github.com/bradenrflournoy" class="link">GitHub</a>
+        <a href="https://linkedin.com/in/bradenrflournoy" class="link">LinkedIn</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container detail">
+    <a class="back-link" href="../index.html">&larr; Back to projects</a>
+
+    <header class="detail-head">
+      <h1 class="detail-title">Yardly</h1>
+      <div class="tags">
+        <span class="tag">Swift</span>
+        <span class="tag">SwiftUI</span>
+        <span class="tag">Firebase</span>
+      </div>
+    </header>
+
+    <figure class="hero-shot">
+      <div class="shot-ph" role="img" aria-label="Visual placeholder for Yardly">
+        <span class="shot-ph-label">Visual coming soon</span>
+        <span class="shot-ph-hint">assets/yardly.png</span>
+      </div>
+      <!-- To use the real visual, replace the .shot-ph div above with:
+           <img src="../assets/yardly.png" alt="Yardly app screen"> -->
+    </figure>
+
+    <section class="prose">
+      <p class="lede">A full-stack iOS app that lets neighbors book small, local lawn-care crews — and lets young providers actually run a small business, with a guardian watching over their shoulder.</p>
+
+      <p>Yardly started from a simple observation: plenty of teenagers want to earn money mowing lawns, and plenty of neighbors would happily hire them, but there was no trustworthy way to connect the two. I designed and built Yardly as the founder and solo developer to be that bridge — a marketplace where customers discover nearby services, book a job, track it in real time, and pay, while young providers get a guided, supervised way to operate.</p>
+
+      <p>The app is built in Swift and SwiftUI on an MVVM architecture, backed by Firebase. Customers can browse available services, request bookings, follow a job through to completion, and leave reviews. On the provider side, Yardly includes a full business-management layer: creating and configuring a service business, handling incoming jobs, and — importantly for younger users — a guardian-supervision system so a parent can oversee and approve their kid&rsquo;s activity.</p>
+
+      <p>One of the pieces I&rsquo;m most proud of is the real-time chat, built on Firebase Firestore, which keeps customers and providers coordinated on the details of a job. Combined with live job tracking, it made the whole exchange feel dependable rather than ad-hoc.</p>
+
+      <p>Yardly reached a working MVP, but development was terminated just before the MVP was fully finished. It remains one of my favorite projects to have built end-to-end — product design, real-time data modeling, auth, and a genuinely tricky trust-and-safety problem — entirely on my own.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="y"></span> Braden Flournoy &middot; <a class="link" href="mailto:bradenrflournoy@gmail.com">bradenrflournoy@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

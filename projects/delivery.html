@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Package Delivery Database — Braden Flournoy</title>
+  <meta name="description" content="Package Delivery Database — normalized MySQL schema with transactional stored procedures and views." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230ea5e9'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='28' fill='white' font-family='system-ui,sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="site-header container">
+    <nav class="nav">
+      <a class="brand" href="../index.html">BF</a>
+      <div class="nav-links">
+        <a href="https://github.com/bradenrflournoy" class="link">GitHub</a>
+        <a href="https://linkedin.com/in/bradenrflournoy" class="link">LinkedIn</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container detail">
+    <a class="back-link" href="../index.html">&larr; Back to projects</a>
+
+    <header class="detail-head">
+      <h1 class="detail-title">Package Delivery Database</h1>
+      <div class="tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">SQL</span>
+      </div>
+    </header>
+
+    <figure class="hero-shot hero-shot--doc">
+      <object data="../assets/cs4400_phase1_eerd_team3.pdf#toolbar=0&navpanes=0" type="application/pdf" aria-label="Enhanced ER diagram for the Package Delivery Database">
+        <div class="shot-ph" role="img" aria-label="Enhanced ER diagram (PDF)">
+          <span class="shot-ph-label">Enhanced ER diagram (PDF)</span>
+          <span class="shot-ph-hint">assets/cs4400_phase1_eerd_team3.pdf</span>
+        </div>
+      </object>
+    </figure>
+    <p class="shot-caption"><a class="link" href="../assets/cs4400_phase1_eerd_team3.pdf" target="_blank" rel="noopener">Open the full EERD (PDF) &rarr;</a></p>
+
+    <section class="prose">
+      <p class="lede">A relational database for a package-delivery company — from a conceptual Enhanced ER design through a normalized MySQL schema and a full layer of transactional stored procedures and views.</p>
+
+      <p>This was a three-phase database systems project (CS 4400) modeling the operations of a delivery business: warehouses, trucks, drivers, multi-leg routes, customer orders, and the packages that flow through them. The core challenge was capturing a real role hierarchy — a single person can be a customer, an employee, and then a specialized driver or warehouse worker — cleanly enough that it maps to a sound relational schema.</p>
+
+      <p><strong>Phase 1 — Enhanced ER design.</strong> I helped model the domain as an EERD (shown above), including the user role hierarchy, the relationships that connect trucks to routes and routes to their ordered sequence of legs, and how packages are boxed, stored, and carried. It captures entities like User, Employee, Contractor, Customer, Warehouse, Warehouse Worker, Driver, Truck, Route, Leg, Order, and Package.</p>
+
+      <p><strong>Phase 2 — Relational schema.</strong> The EERD was mapped to a normalized MySQL schema with the role hierarchy resolved into dedicated tables (user, employee, contractor, customer, driver, warehouse_worker, packer) plus the operational tables (warehouse, truck, route, leg, order, package) and the relationships between them, with keys and constraints enforcing integrity.</p>
+
+      <p><strong>Phase 3 — Stored procedures and views.</strong> On top of the schema I implemented the application logic as transactional stored procedures — hiring and firing drivers, registering packers, adding trucks and reassigning them, starting/extending/deleting routes, adding and routing packages, and more — using serializable isolation so concurrent operations stay consistent, along with views over the data.</p>
+
+      <p>It&rsquo;s a compact end-to-end example of turning a messy real-world domain into a correct, normalized, transaction-safe database.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="y"></span> Braden Flournoy &middot; <a class="link" href="mailto:bradenrflournoy@gmail.com">bradenrflournoy@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
