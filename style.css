@@ -119,12 +119,14 @@ body{
   backdrop-filter: var(--blur);
   transform: translateZ(0);
   transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease;
+  display: flex;
+  flex-direction: column;
 }
 .card:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.22); }
 .card-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .card-title{ margin:0; font-size: 18px; }
 .card-desc{ margin: 10px 0 14px; color: var(--muted); }
-.card-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.card-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: auto; }
 .tags{ display:flex; gap:6px; flex-wrap:wrap; }
 .tag{
   font-size:12px; padding:4px 8px; border-radius:999px;
@@ -133,10 +135,44 @@ body{
   background: rgba(255,255,255,0.05);
 }
 
+/* ====== Card screenshot / placeholder ====== */
+.shot{
+  margin: -16px -16px 14px;      /* bleed to the card edges */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: rgba(255,255,255,0.03);
+}
+.shot img{
+  display:block; width:100%; height:100%;
+  object-fit: cover;
+}
+/* Empty-state frame shown until a real screenshot is dropped in.
+   To use a real image, replace the .shot-ph <div> in index.html with:
+   <img src="assets/<name>.png" alt="..."> */
+.shot-ph{
+  width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+  text-align:center; padding: 10px;
+  color: var(--muted);
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 10px,
+      rgba(255,255,255,0.06) 10px, rgba(255,255,255,0.06) 20px);
+  border-bottom: 1px solid var(--stroke);
+}
+.shot-ph-label{ font-size:13px; font-weight:600; letter-spacing:.2px; }
+.shot-ph-hint{
+  font-size:11px; opacity:.7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 /* ====== Small screens ====== */
 @media (max-width: 560px){
   .nav .link{ margin-left:10px; }
   .card{ padding:14px; }
+  .shot{ margin: -14px -14px 12px; }
 }
 
 /* ====== Accessibility niceties ====== */
